@@ -10,3 +10,4 @@ sm.js
 dist
 package-lock.json
 .DS_Store
+pg_data
