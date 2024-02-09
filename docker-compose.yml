@@ -1,0 +1,19 @@
+services: 
+  db:
+    container_name: database_container
+    image: postgres
+    restart: always
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+
+  # API services
+  api: 
+    image: duplo_test
+    ports: 
+      - 3300:3300
+    environment:
+      NODE_ENV: 'development'
+      DEV_PORT: 3300
+      DEV_DATABASE_STRING: 'postgres://postgres:root@host.docker.internal:5432/duplo_dev'
+    depends_on: 
+      - db

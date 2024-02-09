@@ -1,0 +1,12 @@
+node_modules
+videos/
+db-data
+.env
+/log
+log/
+*.log
+server.log
+sm.js
+dist
+package-lock.json
+.DS_Store
